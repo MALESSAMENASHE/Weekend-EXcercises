@@ -12,30 +12,15 @@
 function toWeirdCase(string){
     let arr= [];
     const str =string.split(" ");
-    for(let i=0;i<str.length;i++){
-        for(let j=0;j<6;j++){
-        if(j%2==0){
-            str[i][j]=str[i][j].toUpperCase(); 
-        }arr.push(str)
+    for (let [...word] of str) {
+      for (let i = 0; i < word.length; i++) {
+        if (i % 2 === 0) {
+          word[i] = word[i].toUpperCase();
+        }
+      }
+      arr.push(word.join(""));
     }
-    }
-  return str.join(' ') ;
-
+    return arr.join(" ");
 }
 let sentence = "Weird string case" ;
 console.log(toWeirdCase(sentence))
-
-// function toWeirdCase(string){
-//     let  newString = [];
-//     for( let i in string ) {
-//         if(i%2 == 0){
-//             newString.push(string[i].toUpperCase());
-//         } else {
-//             newString.push(string[i].toLowerCase());
-//         }
-//     }
-//     return newString.join('');
-// };
-
-// console.log(toWeirdCase('Weird string case'));
-

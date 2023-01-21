@@ -11,3 +11,25 @@
 // "Indivisibilities" -> 2 #'i' occurs seven times and 's' occurs twice
 // "aA11" -> 2 #'a' and '1'
 // "ABBA" -> 2 #'A' and 'B' each occur twice
+
+const countOnlyVowels = (str) => {
+    const voels = {
+      a: true,
+      e: true,
+      i: true,
+      o: true,
+      u: true,
+    };
+    const arr = str.toLowerCase().split("");
+    return arr.reduce((acc, cur) => {
+      if (voels[cur]) {
+        acc[cur] =( acc[cur]||0)+1;
+      }
+      return acc;
+    }, {});
+  };
+  
+  console.log(countOnlyVowels("The end of the world is coming hahahuheheha"));
+
+  \b[0-9]\s
+  \b[a-zA-Z]\s
